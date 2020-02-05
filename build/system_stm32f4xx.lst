@@ -1,0 +1,240 @@
+ARM GAS  C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"system_stm32f4xx.c"
+  14              		.text
+  15              		.global	SystemCoreClock
+  16              		.section	.data.SystemCoreClock,"aw"
+  17              		.align	2
+  20              	SystemCoreClock:
+  21 0000 0024F400 		.word	16000000
+  22              		.global	AHBPrescTable
+  23              		.section	.rodata.AHBPrescTable,"a"
+  24              		.align	2
+  27              	AHBPrescTable:
+  28 0000 00       		.byte	0
+  29 0001 00       		.byte	0
+  30 0002 00       		.byte	0
+  31 0003 00       		.byte	0
+  32 0004 00       		.byte	0
+  33 0005 00       		.byte	0
+  34 0006 00       		.byte	0
+  35 0007 00       		.byte	0
+  36 0008 01       		.byte	1
+  37 0009 02       		.byte	2
+  38 000a 03       		.byte	3
+  39 000b 04       		.byte	4
+  40 000c 06       		.byte	6
+  41 000d 07       		.byte	7
+  42 000e 08       		.byte	8
+  43 000f 09       		.byte	9
+  44              		.global	APBPrescTable
+  45              		.section	.rodata.APBPrescTable,"a"
+  46              		.align	2
+  49              	APBPrescTable:
+  50 0000 00       		.byte	0
+  51 0001 00       		.byte	0
+  52 0002 00       		.byte	0
+  53 0003 00       		.byte	0
+  54 0004 01       		.byte	1
+  55 0005 02       		.byte	2
+  56 0006 03       		.byte	3
+  57 0007 04       		.byte	4
+  58              		.section	.text.SystemInit,"ax",%progbits
+  59              		.align	1
+  60              		.global	SystemInit
+  61              		.arch armv7e-m
+  62              		.syntax unified
+  63              		.thumb
+ARM GAS  C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s 			page 2
+
+
+  64              		.thumb_func
+  65              		.fpu fpv4-sp-d16
+  67              	SystemInit:
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 1, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71 0000 80B4     		push	{r7}
+  72 0002 00AF     		add	r7, sp, #0
+  73 0004 084B     		ldr	r3, .L2
+  74 0006 D3F88830 		ldr	r3, [r3, #136]
+  75 000a 074A     		ldr	r2, .L2
+  76 000c 43F47003 		orr	r3, r3, #15728640
+  77 0010 C2F88830 		str	r3, [r2, #136]
+  78 0014 044B     		ldr	r3, .L2
+  79 0016 4FF00062 		mov	r2, #134217728
+  80 001a 9A60     		str	r2, [r3, #8]
+  81 001c 00BF     		nop
+  82 001e BD46     		mov	sp, r7
+  83              		@ sp needed
+  84 0020 5DF8047B 		ldr	r7, [sp], #4
+  85 0024 7047     		bx	lr
+  86              	.L3:
+  87 0026 00BF     		.align	2
+  88              	.L2:
+  89 0028 00ED00E0 		.word	-536810240
+  91              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  92              		.align	1
+  93              		.global	SystemCoreClockUpdate
+  94              		.syntax unified
+  95              		.thumb
+  96              		.thumb_func
+  97              		.fpu fpv4-sp-d16
+  99              	SystemCoreClockUpdate:
+ 100              		@ args = 0, pretend = 0, frame = 24
+ 101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 102              		@ link register save eliminated.
+ 103 0000 80B4     		push	{r7}
+ 104 0002 87B0     		sub	sp, sp, #28
+ 105 0004 00AF     		add	r7, sp, #0
+ 106 0006 0023     		movs	r3, #0
+ 107 0008 3B61     		str	r3, [r7, #16]
+ 108 000a 0023     		movs	r3, #0
+ 109 000c 7B61     		str	r3, [r7, #20]
+ 110 000e 0223     		movs	r3, #2
+ 111 0010 FB60     		str	r3, [r7, #12]
+ 112 0012 0023     		movs	r3, #0
+ 113 0014 BB60     		str	r3, [r7, #8]
+ 114 0016 0223     		movs	r3, #2
+ 115 0018 7B60     		str	r3, [r7, #4]
+ 116 001a 324B     		ldr	r3, .L11
+ 117 001c 9B68     		ldr	r3, [r3, #8]
+ 118 001e 03F00C03 		and	r3, r3, #12
+ 119 0022 3B61     		str	r3, [r7, #16]
+ 120 0024 3B69     		ldr	r3, [r7, #16]
+ 121 0026 042B     		cmp	r3, #4
+ 122 0028 09D0     		beq	.L5
+ 123 002a 3B69     		ldr	r3, [r7, #16]
+ARM GAS  C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s 			page 3
+
+
+ 124 002c 082B     		cmp	r3, #8
+ 125 002e 0AD0     		beq	.L6
+ 126 0030 3B69     		ldr	r3, [r7, #16]
+ 127 0032 002B     		cmp	r3, #0
+ 128 0034 3DD1     		bne	.L7
+ 129 0036 2C4B     		ldr	r3, .L11+4
+ 130 0038 2C4A     		ldr	r2, .L11+8
+ 131 003a 1A60     		str	r2, [r3]
+ 132 003c 3DE0     		b	.L8
+ 133              	.L5:
+ 134 003e 2A4B     		ldr	r3, .L11+4
+ 135 0040 2B4A     		ldr	r2, .L11+12
+ 136 0042 1A60     		str	r2, [r3]
+ 137 0044 39E0     		b	.L8
+ 138              	.L6:
+ 139 0046 274B     		ldr	r3, .L11
+ 140 0048 5B68     		ldr	r3, [r3, #4]
+ 141 004a 9B0D     		lsrs	r3, r3, #22
+ 142 004c 03F00103 		and	r3, r3, #1
+ 143 0050 BB60     		str	r3, [r7, #8]
+ 144 0052 244B     		ldr	r3, .L11
+ 145 0054 5B68     		ldr	r3, [r3, #4]
+ 146 0056 03F03F03 		and	r3, r3, #63
+ 147 005a 7B60     		str	r3, [r7, #4]
+ 148 005c BB68     		ldr	r3, [r7, #8]
+ 149 005e 002B     		cmp	r3, #0
+ 150 0060 0CD0     		beq	.L9
+ 151 0062 234A     		ldr	r2, .L11+12
+ 152 0064 7B68     		ldr	r3, [r7, #4]
+ 153 0066 B2FBF3F3 		udiv	r3, r2, r3
+ 154 006a 1E4A     		ldr	r2, .L11
+ 155 006c 5268     		ldr	r2, [r2, #4]
+ 156 006e 9209     		lsrs	r2, r2, #6
+ 157 0070 C2F30802 		ubfx	r2, r2, #0, #9
+ 158 0074 02FB03F3 		mul	r3, r2, r3
+ 159 0078 7B61     		str	r3, [r7, #20]
+ 160 007a 0BE0     		b	.L10
+ 161              	.L9:
+ 162 007c 1B4A     		ldr	r2, .L11+8
+ 163 007e 7B68     		ldr	r3, [r7, #4]
+ 164 0080 B2FBF3F3 		udiv	r3, r2, r3
+ 165 0084 174A     		ldr	r2, .L11
+ 166 0086 5268     		ldr	r2, [r2, #4]
+ 167 0088 9209     		lsrs	r2, r2, #6
+ 168 008a C2F30802 		ubfx	r2, r2, #0, #9
+ 169 008e 02FB03F3 		mul	r3, r2, r3
+ 170 0092 7B61     		str	r3, [r7, #20]
+ 171              	.L10:
+ 172 0094 134B     		ldr	r3, .L11
+ 173 0096 5B68     		ldr	r3, [r3, #4]
+ 174 0098 1B0C     		lsrs	r3, r3, #16
+ 175 009a 03F00303 		and	r3, r3, #3
+ 176 009e 0133     		adds	r3, r3, #1
+ 177 00a0 5B00     		lsls	r3, r3, #1
+ 178 00a2 FB60     		str	r3, [r7, #12]
+ 179 00a4 7A69     		ldr	r2, [r7, #20]
+ 180 00a6 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s 			page 4
+
+
+ 181 00a8 B2FBF3F3 		udiv	r3, r2, r3
+ 182 00ac 0E4A     		ldr	r2, .L11+4
+ 183 00ae 1360     		str	r3, [r2]
+ 184 00b0 03E0     		b	.L8
+ 185              	.L7:
+ 186 00b2 0D4B     		ldr	r3, .L11+4
+ 187 00b4 0D4A     		ldr	r2, .L11+8
+ 188 00b6 1A60     		str	r2, [r3]
+ 189 00b8 00BF     		nop
+ 190              	.L8:
+ 191 00ba 0A4B     		ldr	r3, .L11
+ 192 00bc 9B68     		ldr	r3, [r3, #8]
+ 193 00be 1B09     		lsrs	r3, r3, #4
+ 194 00c0 03F00F03 		and	r3, r3, #15
+ 195 00c4 0B4A     		ldr	r2, .L11+16
+ 196 00c6 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 197 00c8 3B61     		str	r3, [r7, #16]
+ 198 00ca 074B     		ldr	r3, .L11+4
+ 199 00cc 1A68     		ldr	r2, [r3]
+ 200 00ce 3B69     		ldr	r3, [r7, #16]
+ 201 00d0 22FA03F3 		lsr	r3, r2, r3
+ 202 00d4 044A     		ldr	r2, .L11+4
+ 203 00d6 1360     		str	r3, [r2]
+ 204 00d8 00BF     		nop
+ 205 00da 1C37     		adds	r7, r7, #28
+ 206 00dc BD46     		mov	sp, r7
+ 207              		@ sp needed
+ 208 00de 5DF8047B 		ldr	r7, [sp], #4
+ 209 00e2 7047     		bx	lr
+ 210              	.L12:
+ 211              		.align	2
+ 212              	.L11:
+ 213 00e4 00380240 		.word	1073887232
+ 214 00e8 00000000 		.word	SystemCoreClock
+ 215 00ec 0024F400 		.word	16000000
+ 216 00f0 40787D01 		.word	25000000
+ 217 00f4 00000000 		.word	AHBPrescTable
+ 219              		.ident	"GCC: (GNU MCU Eclipse ARM Embedded GCC, 64-bit) 8.2.1 20181213 (release) [gcc-8-branch rev
+ARM GAS  C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 system_stm32f4xx.c
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:20     .data.SystemCoreClock:0000000000000000 SystemCoreClock
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:17     .data.SystemCoreClock:0000000000000000 $d
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:27     .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:24     .rodata.AHBPrescTable:0000000000000000 $d
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:49     .rodata.APBPrescTable:0000000000000000 APBPrescTable
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:46     .rodata.APBPrescTable:0000000000000000 $d
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:59     .text.SystemInit:0000000000000000 $t
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:67     .text.SystemInit:0000000000000000 SystemInit
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:89     .text.SystemInit:0000000000000028 $d
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:92     .text.SystemCoreClockUpdate:0000000000000000 $t
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:99     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+C:\Users\Volk\AppData\Local\Temp\cc4lPA3G.s:213    .text.SystemCoreClockUpdate:00000000000000e4 $d
+
+NO UNDEFINED SYMBOLS
